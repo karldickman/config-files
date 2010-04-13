@@ -40,9 +40,8 @@ alias gcc='gcc -masm=intel'                     #Use Intel assembly
 alias gnome-terminal='gnome-terminal --geometry=125x43'
 alias gvim='gvim -geometry 125x43'
 alias indent='while read; do echo "  $REPLY"; done'
-alias objdump='objdump -Mintel'                 #Use Intel assembly
+alias objdump='$GNU_UTILS/bin/objdump -Mintel'                 #Use Intel assembly
 alias patch='patch -b'
-alias ssh='ssh -XY'
 alias tree='tree -C'
 
 # New commands
@@ -63,7 +62,7 @@ list() {
         fi
         echo
     fi
-    ls -BX --color=auto $@
+    $GNU_UTILS/bin/ls -BX --color=auto $@
 }
 
 copy() {
