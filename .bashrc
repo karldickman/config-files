@@ -57,8 +57,11 @@ list() {
     if [[ -d .git ]]; then
         echo -e "${RWHITE}Git branch:${RNORMAL}"
         git branch | indent
-        echo -e "\n${RWHITE}Git status:${RNORMAL}"
-        git status --untracked-files=no | indent
+        git status --untracked-files=no | grep nothing > /dev/null
+        if [[ $? != "0" ]]; then
+            echo -e "\n${RWHITE}Git status:${RNORMAL}"
+            git status --untracked-files=no | indent
+        fi
         echo
     fi
     ls -BX --color=auto $@
