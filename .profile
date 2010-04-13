@@ -5,7 +5,7 @@ export HISTCONTROL=ignoredups       #Ignore duplicate lines in the history
 # Nonportable options
 export CLASSPATH=$HOME/.local/lib/java
 export CVSROOT=~/.local/share/cvs
-export EDITOR=gvim
+export EDITOR=vim
 export DJANGO=/usr/share/python-support/python-django
 export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
 export LIBCHECKLOC=/usr/lib
