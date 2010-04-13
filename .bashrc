@@ -1,3 +1,26 @@
+#Colorings
+export RRESET="\017"
+export RNORMAL="\033[0m"
+export RGRAY="\033[30;1m"
+export RRED="\033[31;1m"
+export RGREEN="\033[32;1m"
+export RYELLOW="\033[33;1m"
+export RBLUE="\033[34;1m"
+export RPURPLE="\033[35;1m"
+export RCYAN="\033[36;1m"
+export RWHITE="\033[37;1m"
+
+export RESET="\[${RRESET}\]"
+export NORMAL="\[${RNORMAL}\]"
+export GRAY="\[${RGRAY}\]"
+export RED="\[${RRED}\]"
+export GREEN="\[${RGREEN}\]"
+export YELLOW="\[${RYELLOW}\]"
+export BLUE="\[${RBLUE}\]"
+export PURPLE="\[${RPURPLE}\]"
+export CYAN="\[${RCYAN}\]"
+export WHITE="\[${RWHITE}\]"
+
 # If not running interactively don't do anything
 if [[ -z "$PS1" ]]; then
     return
@@ -16,6 +39,7 @@ alias cowsay='cowsay -f bong -s'
 alias gcc='gcc -masm=intel'                     #Use Intel assembly
 alias gnome-terminal='gnome-terminal --geometry=125x43'
 alias gvim='gvim -geometry 125x43'
+alias indent='while read; do echo "  $REPLY"; done'
 alias objdump='objdump -Mintel'                 #Use Intel assembly
 alias patch='patch -b'
 alias ssh='ssh -XY'
@@ -25,10 +49,20 @@ alias zigford='zigford -v'
 # New commands
 alias clean='trash -f \#* *~ .*~ *.bak .*.bak  *.tmp .*.tmp core a.out'
 alias errecho='echo >/dev/stderr'
-alias list='ls -X -B --color=auto'
 alias texclean='trash -f *.toc *.aux *.log *.cp *.fn *.tp *.vr *.pg *.ky'
 alias vimpager="vim -u ~/.vimpager"
 alias vimmanpager="vim -u ~/.vimmanpager"
+
+list() {
+    if [[ -d .git ]]; then
+        echo -e "${RWHITE}Git branch:${RNORMAL}"
+        git branch | indent
+        echo -e "\n${RWHITE}Git status:${RNORMAL}"
+        git status --untracked-files=no | indent
+        echo
+    fi
+    ls -BX --color=auto $@
+}
 
 copy() {
     cp $@
@@ -73,18 +107,6 @@ trash() {
 window_title() {
     echo -ne "\033]0;$*\007"
 }
-
-#Colorings
-export RESET="\[\017\]"
-export NORMAL="\[\033[0m\]"
-export GRAY="\[\033[30;1m\]"
-export RED="\[\033[31;1m\]"
-export GREEN="\[\033[32;1m\]"
-export YELLOW="\[\033[33;1m\]"
-export BLUE="\[\033[34;1m\]"
-export PURPLE="\[\033[35;1m\]"
-export CYAN="\[\033[36;1m\]"
-export WHITE="\[\033[37;1m\]"
 
 #Color prompt
 prompt_title() {
