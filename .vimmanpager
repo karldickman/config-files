@@ -1,0 +1,9 @@
+source ~/.vimpager
+
+set titlestring=MANPAGE
+
+"Filetype
+set ft=man
+
+"Key bindings
+nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>

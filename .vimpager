@@ -1,0 +1,15 @@
+"Control options
+set nomodifiable nolist nonumber hlsearch incsearch
+syntax on
+colorscheme tango
+
+" Key bindings.
+nmap b <C-B><C-G>
+nmap q :q!
+map <SPACE> <C-D>
+nmap <Up> <C-Y>
+nmap <Down> <C-E>
+
+" To type the following line, type *two* C-V's followed by two spaces. This
+" is how you map the spacebar.
+nmap ^V <C-F><C-G>
