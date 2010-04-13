@@ -44,7 +44,6 @@ alias objdump='objdump -Mintel'                 #Use Intel assembly
 alias patch='patch -b'
 alias ssh='ssh -XY'
 alias tree='tree -C'
-alias zigford='zigford -v'
 
 # New commands
 alias clean='trash -f \#* *~ .*~ *.bak .*.bak  *.tmp .*.tmp core a.out'
