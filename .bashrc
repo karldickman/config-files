@@ -1,3 +1,5 @@
+export HISTCONTROL=ignoredups
+
 #Colorings
 export RRESET="\017"
 export RNORMAL="\033[0m"
