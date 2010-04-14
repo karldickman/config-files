@@ -104,7 +104,7 @@ pskill() {
 }
 
 trash() {
-    /usr/bin/trash $@
+    trash-put $@
     [[ $? == "0" ]] && list
 }
 
