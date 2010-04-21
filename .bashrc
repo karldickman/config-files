@@ -134,8 +134,12 @@ case "$TERM" in
     esac
 
 # Enable programmable completion features
-[[ -f /etc/bash_completion ]] && source /etc/bash_completion
+if [[ -f /etc/bash_completion ]]; then
+    source /etc/bash_completion
+fi
 
 # Moddifications to shell behavior
 shopt -s checkwinsize   #Check window size
 set -o vi       #vi mode for command entry
+
+source .bashrc_local
