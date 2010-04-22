@@ -2,6 +2,11 @@
 syn clear cOctalZero
 syn match cOctalZero contained "0[1-7]"me=e-1
 
+" Anything that ends in _t is a type
+syn match cUserType /\<\h\w*_t\>/
+highlight link cUserType cType
+syn cluster cParenContents add=cUserType
+
 " GTK syntax stuff
 "let glib_deprecated_errors = 1
 "let gobject_deprecated_errors = 1
