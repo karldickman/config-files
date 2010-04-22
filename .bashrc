@@ -40,7 +40,6 @@ fi
 alias cowsay='cowsay -f bong -s'
 alias gcc='gcc -masm=intel'                     #Use Intel assembly
 alias gnome-terminal='gnome-terminal --geometry=125x43'
-alias gvim='gvim -geometry 125x43'
 alias indent='while read; do echo "  $REPLY"; done'
 alias objdump='objdump -Mintel'                 #Use Intel assembly
 alias patch='patch -b'
