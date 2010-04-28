@@ -1,4 +1,5 @@
 " General
+set guifont=Monospace\ 8
 set mousemodel=popup_setpos
                         "Allow right-click menu
 set mousehide           "Automatically hide mouse when typing
