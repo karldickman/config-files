@@ -37,9 +37,7 @@ if [[ "$TERM" != "dumb" ]]; then
     eval "$(dircolors -b)"   #Enable color support for ls
 fi
 
-alias cowsay='cowsay -f bong -s'
 alias gcc='gcc -masm=intel'                     #Use Intel assembly
-alias gnome-terminal='gnome-terminal --geometry=125x43'
 alias indent='while read; do echo "  $REPLY"; done'
 alias objdump='objdump -Mintel'                 #Use Intel assembly
 alias patch='patch -b'
@@ -141,4 +139,10 @@ fi
 shopt -s checkwinsize   #Check window size
 set -o vi       #vi mode for command entry
 
+if [[ -f .bashrc_linux ]]; then
+    source .bashrc_linux
+fi
+if [[ -f .bashrc_darwin ]]; then
+    source .bashrc_darwin
+fi
 source .bashrc_local
