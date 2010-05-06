@@ -5,4 +5,4 @@ export MANPAGER="sh -c \"col -b | view -u ~/.vimmanpager -\""
 export PAGER="sh -c \"col -b | view -u ~/.vimpager -\""
 export PYTHONPATH=$LOCAL_INSTALL/lib/python
 
-source .profile_local
+source ~/.profile_local

@@ -140,9 +140,9 @@ shopt -s checkwinsize   #Check window size
 set -o vi       #vi mode for command entry
 
 if [[ -f .bashrc_linux ]]; then
-    source .bashrc_linux
+    source ~.bashrc_linux
 fi
 if [[ -f .bashrc_darwin ]]; then
-    source .bashrc_darwin
+    source ~.bashrc_darwin
 fi
-source .bashrc_local
+source ~.bashrc_local
