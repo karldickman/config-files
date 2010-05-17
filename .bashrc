@@ -82,7 +82,7 @@ move() {
 
 makedir() {
     mkdir $@
-    [[ $? == "0" ]] && list
+    nav $@
 }
 
 nav() {
