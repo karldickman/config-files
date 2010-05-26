@@ -79,7 +79,7 @@ if python_highlight_custom_errors == 1
   syn match   pythonExClass         "\<\h\w*Error\>"
 endif
 
-hi link     pythonAssignment      Operator
+hi link     pythonAssignment      pythonOperator
 hi link     pythonBoolean         Boolean
 hi link     pythonConstant        Constant
 hi link     pythonExClass         Constant
@@ -91,7 +91,7 @@ hi link     pythonFinalIdentifier pythonIdentifier
 hi link     pythonImport          Constant
 hi link     pythonImportKeyword   Include
 hi link     pythonKeyword         Keyword
-hi link     pythonRelation        Operator
+hi link     pythonRelation        pythonOperator
 hi link     pythonStructure       Structure
 hi link     pythonType            Type
 hi link     pythonBinNumber       pythonNumber
