@@ -1,0 +1,18 @@
+#!/bin/bash
+
+files=""
+for name in $@; do
+    if [[ -f $name.py ]]; then
+        echo "Skipping $name.py: file exists." > /dev/stderr
+    else
+        cp $LOCAL_INSTALL/share/empty.py $name.py
+        files="$files $name.py"
+        chmod u+x $name.py
+    fi
+done
+if [[ -z $files ]]; then
+    echo "No files specified." > /dev/stderr
+    exit 1
+else
+    gvim $files
+fi
