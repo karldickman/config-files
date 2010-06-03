@@ -39,6 +39,8 @@ fi
 
 alias gcc='gcc -masm=intel'                     #Use Intel assembly
 alias indent='while read; do echo "  $REPLY"; done'
+alias mysql='mysql -p'
+alias mysqldump='mysqldump -p'
 alias objdump='objdump -Mintel'                 #Use Intel assembly
 alias patch='patch -b'
 alias ssh='ssh -XY'
@@ -75,14 +77,14 @@ link() {
     [[ $? == "0" ]] && list
 }
 
-move() {
-    mv -b $@
-    [[ $? == "0" ]] && list
-}
-
 makedir() {
     mkdir $@
     nav $@
+}
+
+move() {
+    mv -b $@
+    [[ $? == "0" ]] && list
 }
 
 nav() {
