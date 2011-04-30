@@ -79,7 +79,7 @@ link() {
 
 makedir() {
     mkdir $@
-    nav $@
+    [[ $? == "0" ]] && nav $@
 }
 
 move() {
@@ -103,7 +103,7 @@ pskill() {
 }
 
 trash() {
-    trash-put $@
+    /usr/bin/trash $@
     [[ $? == "0" ]] && list
 }
 
