@@ -54,7 +54,8 @@ alias vimpager="vim -u ~/.vimpager"
 alias vimmanpager="vim -u ~/.vimmanpager"
 
 list() {
-    if [[ -d .git ]]; then
+    git status >/dev/null 2>/dev/null
+    if [[ $? == "0" ]]; then
         echo -e "${RWHITE}Git branch:${RNORMAL}"
         git branch | indent
         git status --untracked-files=no | grep nothing > /dev/null
