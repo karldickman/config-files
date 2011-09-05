@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packaging", "Packaging", "{72A3B3EF-C3BC-40B1-A55B-477979FC14BA}"
+EndProject
+Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "Packages", "Packaging\Packages.mdproj", "{BD573D1F-3659-42C9-B71A-5BAA3A1078BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD573D1F-3659-42C9-B71A-5BAA3A1078BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD573D1F-3659-42C9-B71A-5BAA3A1078BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BD573D1F-3659-42C9-B71A-5BAA3A1078BB} = {72A3B3EF-C3BC-40B1-A55B-477979FC14BA}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Packaging\Packages.mdproj
+	EndGlobalSection
+EndGlobal
