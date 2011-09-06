@@ -58,10 +58,10 @@ list() {
     if [[ $? == "0" ]]; then
         echo -e "${RWHITE}Git branch:${RNORMAL}"
         git branch | indent
-        git status --untracked-files=no | grep nothing > /dev/null
+        git status | grep nothing > /dev/null
         if [[ $? != "0" ]]; then
             echo -e "\n${RWHITE}Git status:${RNORMAL}"
-            git status --untracked-files=no | indent
+            git status | indent
         fi
         echo
     fi
