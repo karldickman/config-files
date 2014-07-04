@@ -65,7 +65,7 @@ list() {
         fi
         echo
     fi
-    ls -BX --color=auto $@
+    ls -BX --color=auto "$@"
 }
 
 copy() {
