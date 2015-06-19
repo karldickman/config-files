@@ -1,4 +1,21 @@
+# If not running interactively don't do anything
+if [[ -z "$PS1" ]]; then
+    return
+fi
+
+# Settings
 export HISTCONTROL=ignoredups
+
+# Paths
+export LOCAL_INSTALL=$HOME/.local
+export GOPATH="$LOCAL_INSTALL/gopath"
+export MONO_PATH="$LOCAL_INSTALL/lib/mono"
+export TEXMFHOME="$LOCAL_INSTALL/share/texmf"
+PATH="$LOCAL_INSTALL/bin:$GOPATH:$GOPATH/bin:$PATH"
+export EDITOR=vim
+export MANPAGER="sh -c \"col -b | view -u ~/.vimmanpager -\""
+export PAGER="sh -c \"col -b | view -u ~/.vimpager -\""
+export PYTHONPATH=$LOCAL_INSTALL/lib/python
 
 #Colorings
 export RRESET="\017"
@@ -22,11 +39,6 @@ export BLUE="\[${RBLUE}\]"
 export PURPLE="\[${RPURPLE}\]"
 export CYAN="\[${RCYAN}\]"
 export WHITE="\[${RWHITE}\]"
-
-# If not running interactively don't do anything
-if [[ -z "$PS1" ]]; then
-    return
-fi
 
 # Aliases and other command modifications
 if [[ -x /usr/bin/lesspipe ]]; then
@@ -54,17 +66,6 @@ alias vimpager="vim -u ~/.vimpager"
 alias vimmanpager="vim -u ~/.vimmanpager"
 
 list() {
-    git status >/dev/null 2>/dev/null
-    if [[ $? == "0" ]]; then
-        echo -e "${RWHITE}Git branch:${RNORMAL}"
-        git branch | indent
-        git status | grep nothing > /dev/null
-        if [[ $? != "0" ]]; then
-            echo -e "\n${RWHITE}Git status:${RNORMAL}"
-            git status | indent
-        fi
-        echo
-    fi
     ls -BX --color=auto "$@"
 }
 
@@ -148,4 +149,6 @@ fi
 if [[ -f .bashrc_darwin ]]; then
     source ~/.bashrc_darwin
 fi
-source ~/.bashrc_local
+if [[ -f .bashrc_local ]]; then
+    source ~/.bashrc_local
+fi
