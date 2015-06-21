@@ -94,6 +94,10 @@ nav() {
     [[ $? == "0" ]] && list
 }
 
+up() {
+    nav ..
+}
+
 pskill() {
 	local pid
 	pid=$(ps -A | grep $1 | awk '{ print $1 }')
@@ -105,7 +109,7 @@ pskill() {
 }
 
 trash() {
-    /usr/bin/trash $@
+    /usr/bin/trash "$@"
     [[ $? == "0" ]] && list
 }
 

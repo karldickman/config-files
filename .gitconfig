@@ -3,3 +3,5 @@
 	email = karldickman@gmail.com
 [diff]
 	tool = vimdiff
+[push]
+	default = simple
