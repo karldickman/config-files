@@ -1,0 +1,18 @@
+#!/bin/bash
+IFS=$'\n'
+for line in $(join -v 1 <(ls -1) <(sort .gdignore))
+do
+    echo $line
+    drive push "$line"
+    status=$?
+    if [[ $status != 0 ]]
+    then
+        exit $status
+    fi
+    drive pull "$line"
+    status=$?
+    if [[ $status != 0 ]]
+    then
+        exit $status
+    fi
+done
