@@ -5,3 +5,5 @@
 	tool = vimdiff
 [push]
 	default = simple
+[merge]
+	tool = vimdiff

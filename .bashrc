@@ -14,7 +14,7 @@ export TEXMFHOME="$LOCAL_INSTALL/share/texmf"
 PATH="$LOCAL_INSTALL/bin:$GOPATH:$GOPATH/bin:$PATH"
 export EDITOR=vim
 export MANPAGER="sh -c \"col -b | view -u ~/.vimmanpager -\""
-export PAGER="sh -c \"col -b | view -u ~/.vimpager -\""
+# export PAGER="sh -c \"col -b | view -u ~/.vimpager -\""
 export PYTHONPATH=$LOCAL_INSTALL/lib/python
 
 #Colorings
