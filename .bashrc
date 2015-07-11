@@ -132,10 +132,10 @@ promptcolor() {
 
 case "$TERM" in
     xterm*)
-        PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h${NORMAL}$ "; prompt_title;'
+        PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%T")${NORMAL}$ "; prompt_title;'
         ;;
     *)
-        PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h:\w${NORMAL}\$ ";'
+        PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%T"):\w${NORMAL}\$ ";'
     esac
 
 # Enable programmable completion features
