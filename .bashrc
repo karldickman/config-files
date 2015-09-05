@@ -70,22 +70,22 @@ list() {
 }
 
 copy() {
-    cp $@
+    cp "$@"
     [[ $? == "0" ]] && list
 }
 
 link() {
-    ln -s $@
+    ln -s "$@"
     [[ $? == "0" ]] && list
 }
 
 makedir() {
-    mkdir $@
-    [[ $? == "0" ]] && nav $@
+    mkdir "$@"
+    [[ $? == "0" ]] && nav "$@"
 }
 
 move() {
-    mv -b $@
+    mv -b "$@"
     [[ $? == "0" ]] && list
 }
 
