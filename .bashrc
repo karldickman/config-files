@@ -117,6 +117,11 @@ window_title() {
     echo -ne "\033]0;$*\007"
 }
 
+github() {
+    git remote add github "git@github.com:karldickman/$1.git"
+    git push -u github master
+}
+
 #Color prompt
 prompt_title() {
     window_title "$USER@${HOSTNAME%%.*}:${PWD/#$HOME/~}"
