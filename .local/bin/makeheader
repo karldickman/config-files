@@ -1,0 +1,95 @@
+#!/usr/bin/python2.6
+
+from miscellaneous import main_function
+from os.path import splitext
+from re import compile as Regex
+from re import MULTILINE
+from sys import stderr
+
+def parse_arguments(argv):
+    file_names = []
+    for argument in argv[1:]:
+        name, extension = splitext(argument)
+        if extension != ".c":
+            print >> stderr, "Warning: Do not know what to do with a", extension, "file."
+        else:
+            file_names.append(name)
+    return None, file_names
+
+@main_function(parse_arguments)
+def main(options, file_names):
+    for file_name in file_names:
+        with open(file_name + ".c") as source_file:
+            with open(file_name + ".h", "w") as header_file:
+                print >> header_file, "#ifndef _%s_h\n#define _%s_h 1\n" % (file_name, file_name)
+                print >> header_file, source_to_header(source_file.read())
+                print >> header_file, "\n#endif"
+
+def isource_to_header(string):
+    """Convert the string, which should be a C source file, to a C header
+    file.  Yields the lines of the header file one at a time."""
+    identifier = "[a-zA-Z_]\w*"
+    qualifiers = "(?:complex)"
+    type_with_qualifier = identifier + "(?:\s+" + qualifiers + ")?"
+    type_ = "(?:" + type_with_qualifier + "\s+|" + type_with_qualifier + "(?:\s*\*+)?\s*)"
+    variable_name = identifier + "(?:\[(?:\d+)?\])*"
+    function_pointer_argument_list = type_ + "(?:,\s*" + type_ + ")*"
+    function_pointer = (type_ + "\s*\(\s*\*\s*" + variable_name + "\s*\)\s*\(\s*" +
+                        function_pointer_argument_list + "\s*\)")
+    var_declaration = ("(" + type_ + variable_name + "|" +
+                       function_pointer + ")")
+    argument_list = "(?:" + var_declaration + "(?:,\s*" + var_declaration + ")*)?"
+    func_declaration = type_ + "\s+" + identifier
+    one_liners = {
+        "typedef": Regex("typedef.*;"),
+        "preprocessor": Regex("#.*[^\\\\]$"),
+        "docstring": Regex("/\*\*.*\*/"),
+        "function": Regex("\s*".join([func_declaration, "\(", argument_list,
+                                      "\)", "{$"])),
+    }
+    one_line_callbacks = {"function": lambda line: "extern " + line.replace("{", ";")}
+    multi_liners = {
+        "typedef": (Regex("typedef[^;]*$"), Regex("\s*".join(["}", identifier, ";"]))),
+        "preprocessor": (Regex("#.*\\\\$"), Regex(".*[^\\\\]$")),
+        "docstring": (Regex("/\*\*.*^[/]$"), Regex(".*\*/")),
+        "function": (Regex(func_declaration + "\s*\([^{]*$"), Regex(".*\)\s*{")),
+    }
+    multi_line_callbacks = {"function": ((lambda line: "extern " + line),
+                                         (lambda line: line.replace("{", ";")))}
+    context = None
+    for line in string.splitlines():
+        clean_line = line.rstrip()
+        if len(clean_line) == 0:
+            yield ""
+        elif context:
+            if multi_liners[context][1].match(line):
+                try:
+                    yield multi_line_callbacks[context][1](line)
+                except KeyError:
+                    yield line
+                context = None
+            else:
+                yield line
+        else:
+            for name, regex in one_liners.iteritems():
+                if(regex.match(clean_line)):
+                    try:
+                        yield one_line_callbacks[name](line)
+                    except KeyError:
+                        yield line
+                    break
+            else:
+                for name, (start, end) in multi_liners.iteritems():
+                    if(start.match(clean_line)):
+                        try:
+                            yield multi_line_callbacks[name][0](line)
+                        except KeyError:
+                            yield line
+                        context = name
+                        break
+
+def source_to_header(string):
+    return "\n".join(isource_to_header(string))
+
+if __name__ == "__main__":
+    main()
