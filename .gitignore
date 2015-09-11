@@ -1,8 +1,10 @@
 Books
 Brain Trust
 Budget.gnucash
+Certificates/
 Code/
 Clinton Traffic Data/
+Database Backups/
 Desktop/
 Documents/
 Downloads/
@@ -110,7 +112,7 @@ C:\\nppdf32Log\\debuglog.txt
 .macromedia/
 .mono/
 .mozilla/
-.mtab.fuseio
+.mtab.fuseiso
 .mysql/
 .pki
 .pylint.d/
