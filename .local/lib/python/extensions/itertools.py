@@ -48,16 +48,6 @@ def consume(iterator, n):
     "Advance the iterator n-steps ahead. If n is none, consume entirely."
     collections.deque(islice(iterator, n), maxlen=0)
 
-def fibonacci(limit=None):
-    """Generate the Fibonacci sequence, for values less than limit."""
-    a = 1
-    b = 0
-    while True:
-        if limit is not None and a + b > limit:
-            return
-        a, b = b, a + b
-        yield b
-
 def grouper(n, iterable, fillvalue=None):
     "grouper(3, 'ABCDEFG', 'x') --> ABC DEF Gxx"
     args = [iter(iterable)] * n
