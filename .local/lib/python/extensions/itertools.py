@@ -10,18 +10,6 @@ def all_up_to(counts):
             for partial in all_up_to(counts[1:]):
                 yield [i] + partial
 
-def binary_numbers(length):
-    """Construct all possible binary numbers of the given length."""
-    if length < 1:
-        return
-    elif length == 1:
-        yield [0]
-        yield [1]
-    else:
-        for path in binary_numbers(length - 1):
-            yield [0] + path
-            yield [1] + path
-
 def combinations_with_replacement(iterable, r):
     "combinations_with_replacement('ABC', 2) --> AA AB AC BB BC CC"
     # number items returned:  (n+r-1)! / r! / (n-1)!
