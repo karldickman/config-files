@@ -1,0 +1,2 @@
+file_search_maxima: append (file_search_maxima,
+    ["/home/karl/.maxima/###.mac"])$
