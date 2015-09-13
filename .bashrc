@@ -58,6 +58,24 @@ alias patch='patch -b'
 alias ssh='ssh -XY'
 alias tree='tree -C'
 
+scheme() {
+    local has_file_arg=false
+    for arg in "$@"
+    do
+        if [[ -e "$arg" ]]; then
+            has_file_arg=true
+            local file="$arg"
+            break
+        fi
+    done
+    if [[ $has_file_arg = true ]]; then
+        local arg_string=$(echo "$@" | sed s/$file//g)
+        /usr/bin/scheme < "$file" --quiet $arg_string
+    else
+        /usr/bin/scheme --quiet $@
+    fi
+}
+
 # New commands
 alias clean='trash -f \#* *~ .*~ *.bak .*.bak  *.tmp .*.tmp core a.out'
 alias errecho='echo >/dev/stderr'
