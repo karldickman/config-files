@@ -42,6 +42,7 @@ XC
 .bashrc_local
 .cache/
 .furiusisomount/
+.ghc
 .goutputstream*
 .local/bin/.vvpmount
 .local/bin/.vvprand

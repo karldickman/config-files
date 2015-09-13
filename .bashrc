@@ -72,7 +72,7 @@ scheme() {
         local arg_string=$(echo "$@" | sed s/$file//g)
         /usr/bin/scheme < "$file" --quiet $arg_string
     else
-        /usr/bin/scheme --quiet $@
+        /usr/bin/scheme $@
     fi
 }
 
