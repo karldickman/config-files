@@ -1,6 +1,7 @@
 Books
 Brain Trust
 Budget.gnucash
+Blog/
 Certificates/
 Code/
 Clinton Traffic Data/
@@ -54,6 +55,7 @@ XC
 .xsession-errors*
 *.swp
 .jack3rc~
+.lesshst
 .local/lib/
 .local/share/
 .pulse-cookie
