@@ -5,7 +5,7 @@ Blog/
 Certificates/
 Code/
 Clinton Traffic Data/
-Database Backups/
+Database_Backups/
 Desktop/
 Documents/
 Downloads/
@@ -124,7 +124,9 @@ C:\\nppdf32Log\\debuglog.txt
 .rpmdb/
 .ssh/
 .synaptic/
+.wget-hsts
 .wine/
+.wine-pipelight/
 .wireshark/
 .wxMaxima
 .xine/

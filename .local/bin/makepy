@@ -1,13 +1,17 @@
 #!/bin/bash
 
 files=""
-for name in $@; do
-    if [[ -f $name.py ]]; then
-        echo "Skipping $name.py: file exists." > /dev/stderr
+for arg in $@; do
+	if [[ "$arg" == "-h" ]] || [[ "$arg" == "--help" ]]; then
+		echo "$0 MODULE_NAME [MORE_MODULE_NAMES]"
+		echo "-h, --help Display this message and exit."
+		exit 0
+    elif [[ -f $arg.py ]]; then
+        echo "Skipping $arg.py: file exists." > /dev/stderr
     else
-        cp $LOCAL_INSTALL/share/empty.py $name.py
-        files="$files $name.py"
-        chmod u+x $name.py
+        cp $LOCAL_INSTALL/share/empty.py $arg.py
+        files="$files $arg.py"
+        chmod u+x $arg.py
     fi
 done
 if [[ -z $files ]]; then

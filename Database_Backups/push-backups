@@ -1,0 +1,6 @@
+#!/bin/bash
+backups=/home/karl/Database_Backups
+find $backups/daily/ -mindepth 1 -type f -mtime +60 -delete
+find $backups/weekly/ -mindepth 1 -type f -mtime +60 -delete
+find $backups/monthly/ -mindepth 1 -type f -mtime +60 -delete
+/home/karl/.local/gopath/bin/drive push -quiet -no-prompt $backups > /dev/null
