@@ -6,6 +6,7 @@ Certificates/
 Code/
 Clinton Traffic Data/
 Database_Backups/
+DELETE ME/
 Desktop/
 Documents/
 Downloads/
@@ -31,9 +32,11 @@ Recipes/
 Scanned
 School
 Sent/
+Statements to Laura/
 Uploads/
 Versioned/
-Videos
+Videos/
+Warrantees/
 Work
 XC
 *.desktop
@@ -110,6 +113,7 @@ C:\\nppdf32Log\\debuglog.txt
 .icedtea/
 .icons/
 .java/
+.kde/
 .libreoffice/
 .liferea_1.8/
 .local/gopath/
@@ -123,6 +127,7 @@ C:\\nppdf32Log\\debuglog.txt
 .recently-used
 .registry
 .rpmdb/
+.shutter/
 .ssh/
 .synaptic/
 .wget-hsts
