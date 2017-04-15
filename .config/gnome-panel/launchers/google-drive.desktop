@@ -7,4 +7,4 @@ Terminal=false
 Exec=xdg-open http://drive.google.com/
 Name=Google Drive
 Comment=Google Drive
-Icon=/usr/share/pixmaps/google-drive.png
+Icon=/home/karldickman/.local/share/pixmaps/google-drive.png
