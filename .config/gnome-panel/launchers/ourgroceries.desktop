@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.
+Type=Application
+Terminal=false
+Exec=xdg-open https://www.ourgroceries.com/your-lists/list/Y56zPdq0y1Dr0o3oMQn0Hl
+Name=OurGroceries
+Comment=OurGroceries Shopping List
+Icon=/usr/share/pixmaps/OurGroceries.png

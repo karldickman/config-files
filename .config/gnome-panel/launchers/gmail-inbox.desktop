@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.
+Type=Application
+Terminal=false
+Exec=xdg-open http://inbox.google.com/
+Name=Gmail
+Comment=Gmail inbox
+Icon=/usr/share/pixmaps/gmail-inbox.png

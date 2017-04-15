@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.
+Type=Application
+Terminal=false
+Exec=xdg-open http://voice.google.com/
+Name=Google Voice
+Comment=Google Voice
+Icon=/usr/share/pixmaps/google-voice.png

@@ -5,7 +5,8 @@ Blog/
 Certificates/
 Code/
 Clinton Traffic Data/
-Database Backups/
+Database_Backups/
+DELETE ME/
 Desktop/
 Documents/
 Downloads/
@@ -18,6 +19,7 @@ House
 Home
 Insurance
 Manuals/
+Miscellaneous/
 Music
 Old Documents/
 Pictures
@@ -30,9 +32,11 @@ Recipes/
 Scanned
 School
 Sent/
+Statements to Laura/
 Uploads/
 Versioned/
-Videos
+Videos/
+Warrantees/
 Work
 XC
 *.desktop
@@ -108,6 +112,7 @@ C:\\nppdf32Log\\debuglog.txt
 .icedtea/
 .icons/
 .java/
+.kde/
 .libreoffice/
 .liferea_1.8/
 .local/gopath/
@@ -121,9 +126,12 @@ C:\\nppdf32Log\\debuglog.txt
 .recently-used
 .registry
 .rpmdb/
+.shutter/
 .ssh/
 .synaptic/
+.wget-hsts
 .wine/
+.wine-pipelight/
 .wireshark/
 .wxMaxima
 .xine/
