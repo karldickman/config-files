@@ -1,5 +1,5 @@
 " General
-set guifont=Monospace\ 8
+set guifont=Monospace\ 12
 set mousemodel=popup_setpos
                         "Allow right-click menu
 set mousehide           "Automatically hide mouse when typing
@@ -13,5 +13,4 @@ map <S-Insert> <MiddleMouse>
 highlight cursorline guibg=#222222
                         "Highlight current line
 
-let do_syntax_sel_menu = 1|runtime! synmenu.vim|aunmenu &Syntax.&Show\ filetypes\ in\ menu
-                        "Activate syntax options in menu
+let do_syntax_sel_menu = 1 "Activate syntax options in menu
