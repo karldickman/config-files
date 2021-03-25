@@ -110,6 +110,11 @@ github() {
     git push -u github master
 }
 
+# Parse git branch
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'
+}
+
 #Color prompt
 prompt_title() {
     window_title "$USER@${HOSTNAME%%.*}:${PWD/#$HOME/~}"
@@ -125,7 +130,7 @@ promptcolor() {
 
 case "$TERM" in
     xterm*)
-        PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%T")${NORMAL}$ "; prompt_title;'
+		PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%T")${GREEN} ($(parse_git_branch)) ${NORMAL}$ "; prompt_title;'
         ;;
     *)
         PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%T"):\w${NORMAL}\$ ";'
