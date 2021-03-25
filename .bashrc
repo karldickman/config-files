@@ -130,10 +130,10 @@ promptcolor() {
 
 case "$TERM" in
     xterm*)
-		PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%T")${GREEN} ($(parse_git_branch)) ${NORMAL}$ "; prompt_title;'
+		PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%Y-%m-%d %H:%M:%S")${GREEN} ($(parse_git_branch)) ${NORMAL}$ "; prompt_title;'
         ;;
     *)
-        PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%T"):\w${NORMAL}\$ ";'
+        PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%Y-%m-%d %H:%M:%S"):\w${NORMAL}\$ ";'
     esac
 
 # Enable programmable completion features
