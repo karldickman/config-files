@@ -1,11 +1,11 @@
 [user]
-	name = karldickman
+	name = Karl Dickman
 	email = karldickman@gmail.com
 [diff]
 	tool = vimdiff
-[push]
-	default = simple
 [merge]
 	tool = vimdiff
+[push]
+	default = simple
 [pull]
 	ff = only
