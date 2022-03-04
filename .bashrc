@@ -51,8 +51,6 @@ fi
 
 alias gcc='gcc -masm=intel'                     #Use Intel assembly
 alias indent='while read; do echo "  $REPLY"; done'
-alias mysql='mysql -p'
-alias mysqldump='mysqldump -p'
 alias objdump='objdump -Mintel'                 #Use Intel assembly
 alias patch='patch -b'
 alias ssh='ssh -XY'
@@ -77,39 +75,16 @@ scheme() {
 }
 
 # New commands
+alias ls='ls -BX --color=auto'
 alias clean='trash -f \#* *~ .*~ *.bak .*.bak  *.tmp .*.tmp core a.out'
 alias errecho='echo >/dev/stderr'
 alias texclean='trash -f *.toc *.aux *.log *.cp *.fn *.tp *.vr *.pg *.ky'
 alias vimpager="vim -u ~/.vimpager"
 alias vimmanpager="vim -u ~/.vimmanpager"
 
-list() {
-    ls -BX --color=auto "$@"
-}
-
-copy() {
-    cp "$@"
-    [[ $1 != "-h" ]] && [[ $1 != "--help" ]] && [[ $? == "0" ]] && list
-}
-
-link() {
-    ln -s "$@"
-    [[ $1 != "-h" ]] && [[ $1 != "--help" ]] && [[ $? == "0" ]] && list
-}
-
-makedir() {
-    mkdir "$@"
-    [[ $1 != "-h" ]] && [[ $1 != "--help" ]] && [[ $? == "0" ]] && nav "$@"
-}
-
-move() {
-    mv -b "$@"
-    [[ $1 != "-h" ]] && [[ $1 != "--help" ]] && [[ $? == "0" ]] && list
-}
-
 nav() {
     cd "$@"
-    [[ $1 != "-h" ]] && [[ $1 != "--help" ]] && [[ $? == "0" ]] && list
+    [[ $1 != "-h" ]] && [[ $1 != "--help" ]] && [[ $? == "0" ]] && ls
 }
 
 up() {
@@ -126,11 +101,6 @@ pskill() {
     fi
 }
 
-trash() {
-    /usr/bin/trash "$@"
-    [[ $? == "0" ]] && list
-}
-
 window_title() {
     echo -ne "\033]0;$*\007"
 }
@@ -138,6 +108,11 @@ window_title() {
 github() {
     git remote add github "git@github.com:karldickman/$1.git"
     git push -u github master
+}
+
+# Parse git branch
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'
 }
 
 #Color prompt
@@ -155,10 +130,10 @@ promptcolor() {
 
 case "$TERM" in
     xterm*)
-        PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%T")${NORMAL}$ "; prompt_title;'
+		PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%Y-%m-%d %H:%M:%S")${GREEN} ($(parse_git_branch)) ${NORMAL}$ "; prompt_title;'
         ;;
     *)
-        PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%T"):\w${NORMAL}\$ ";'
+        PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%Y-%m-%d %H:%M:%S"):\w${NORMAL}\$ ";'
     esac
 
 # Enable programmable completion features

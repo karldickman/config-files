@@ -7,4 +7,4 @@ Terminal=false
 Exec=xdg-open http://inbox.google.com/
 Name=Gmail
 Comment=Gmail inbox
-Icon=/usr/share/pixmaps/gmail-inbox.png
+Icon=/home/karldickman/.local/share/pixmaps/gmail-inbox.png
