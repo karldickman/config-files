@@ -1,3 +1,4 @@
+Bicycle/
 Books
 Brain Trust
 Budget.gnucash
@@ -18,20 +19,24 @@ Health/
 House
 Home
 Insurance
+Insync/
 Manuals/
 Miscellaneous/
 Music
 Old Documents/
 Pictures
 Photos/
+Podcasts/
 Printed/
 Programming
 Reading/
 Receipts
 Recipes/
+R/
 Scanned
 School
 Sent/
+snap/
 Statements to Laura/
 Uploads/
 Versioned/
@@ -41,19 +46,32 @@ Work
 XC
 *.desktop
 .adobe/
+.AndroidStudio2.3/
 .asoundrc
 .audacity-data/
+.azuredatastudio/
 .bash_history
 .cache/
+.ecryptfs
 .furiusisomount/
 .ghc
 .goutputstream*
-.local/bin/.vvpmount
-.local/bin/.vvprand
-.local/bin/.vpprand
+.nuget/
+.pam_environment
+.pgadmin3
+.pgAdmin4.startup.log
+.pgadmin_histoqueries
+.pgpass
 .profile_local
+.r/
+.racket/
+.remmina/
+.rhythmbox/
+.rstudio-desktop/
+.sambox.cache
 .sudo_as_admin_successful
 .vim/spell/
+.workout.ini
 .Xauthority*
 .xsession-errors*
 *.swp
@@ -61,6 +79,7 @@ XC
 .lesshst
 .local/lib/
 .local/share/
+.Private
 .pulse-cookie
 .pulse/
 .sqlite_history
