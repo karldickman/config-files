@@ -1,31 +1,41 @@
+Audio/
 Bicycle/
 Books
 Brain Trust
 Budget.gnucash
 Blog/
 Certificates/
+Chores/
+Configure/
 Code/
+Correspondence/
 Clinton Traffic Data/
+Database.kdbx
 Database_Backups/
 DELETE ME/
 Desktop/
+Dickman.key
 Documents/
 Downloads/
 Education
 Finances
 Google Photos/
+GnuCash/
 Graduation
 Health/
 House
 Home
 Insurance
 Insync/
+lcxctfalums/
 Manuals/
 Miscellaneous/
 Music
 Old Documents/
+Pets/
 Pictures
 Photos/
+Play Books Notes/
 Podcasts/
 Printed/
 Programming
@@ -35,9 +45,13 @@ Recipes/
 R/
 Scanned
 School
+Seasons/
 Sent/
 snap/
+Stack/
 Statements to Laura/
+Training/
+Transportation/
 Uploads/
 Versioned/
 Videos/
@@ -77,6 +91,7 @@ XC
 *.swp
 .jack3rc~
 .lesshst
+.local/bin/
 .local/lib/
 .local/share/
 .Private
@@ -139,9 +154,11 @@ C:\\nppdf32Log\\debuglog.txt
 .mono/
 .mozilla/
 .mtab.fuseiso
+.my.cnf
 .mysql/
 .pki
 .pylint.d/
+.python_history
 .recently-used
 .registry
 .rpmdb/
