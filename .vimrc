@@ -71,7 +71,7 @@ set smartindent
 
 source ~/.vim/scripts/commands.vim
 source ~/.vim/scripts/minibufexpl.vim
-source ~/.vim/scripts/taglist.vim
+"source ~/.vim/scripts/taglist.vim
 source ~/.vim/scripts/tasklist.vim
 source ~/.vim/scripts/localvimrc.vim
 source ~/.vim/scripts/NERD_tree.vim
