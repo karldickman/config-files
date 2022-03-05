@@ -124,13 +124,13 @@ promptcolor() {
     if [[ $1 != "0" ]]; then
         printf "%s" "$RED"
     else
-        printf "%s" "$YELLOW"
+        printf "%s" "$GREEN"
     fi
 }
 
 case "$TERM" in
     xterm*)
-		PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%Y-%m-%d %H:%M:%S")${GREEN} ($(parse_git_branch)) ${NORMAL}$ "; prompt_title;'
+		PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%Y-%m-%d %H:%M:%S")${YELLOW} ($(parse_git_branch)) ${NORMAL}$ "; prompt_title;'
         ;;
     *)
         PROMPT_COMMAND='PS1="$(promptcolor $?)\u@\h $(date +"%Y-%m-%d %H:%M:%S"):\w${NORMAL}\$ ";'
