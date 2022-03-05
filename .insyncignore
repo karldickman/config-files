@@ -1,0 +1,12 @@
+# This file doesn't do anything.  Paste into the insync rules to prevent synching.
+.*
+Code/chores
+Code/training-log
+Configure/
+Desktop/
+Dickman.key
+Downloads/
+Music/
+Play Books Notes/
+R/
+snap/
