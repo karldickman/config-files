@@ -1,2 +1,2 @@
 #!/bin/bash
-chown -R karl:karl daily
+chown -R karldickman:karldickman *
