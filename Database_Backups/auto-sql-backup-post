@@ -1,4 +1,5 @@
 #!/bin/bash
-chown -R karldickman:karldickman *
-chown -R karldickman:karldickman */*
-chown -R karldickman:karldickman */*/*.gz
+backups=/home/karldickman/Database_Backups
+chmod a+r $backups/*
+chmod a+r $backups/*/*
+chmod a+r $backups/*/*/*.gz
