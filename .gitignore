@@ -12,6 +12,7 @@ Code
 Correspondence
 Clinton Traffic Data
 Database.kdbx
+Database.old.kdbx
 Database_Backups
 DELETE ME
 Desktop
@@ -32,7 +33,10 @@ lcxctfalums
 Manuals
 Miscellaneous
 Music
+node_modules/
 Old Documents
+package-lock.json
+package.json
 Pets
 Pictures
 Photos
@@ -158,6 +162,7 @@ C:\\nppdf32Log\\debuglog.txt
 .mtab.fuseiso
 .my.cnf
 .mysql
+.npm/
 .pki
 .psql_history
 .pylint.d
@@ -168,6 +173,7 @@ C:\\nppdf32Log\\debuglog.txt
 .shutter
 .ssh
 .synaptic
+.vscode/
 .wget-hsts
 .wine
 .wine-pipelight
