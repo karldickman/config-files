@@ -1,5 +1,3 @@
 #!/bin/bash
 backups=/home/karldickman/Database_Backups
-chmod a+r $backups/*
-chmod a+r $backups/*/*
-chmod a+r $backups/*/*/*.gz
+chown karldickman:karldickman $backups/*/*/*.gz
